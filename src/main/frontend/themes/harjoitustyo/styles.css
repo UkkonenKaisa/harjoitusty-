@@ -1,0 +1,29 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+/* Kaikki Vaadin-napit (vaadin-button) */
+vaadin-button {
+    background-color: #FFD700; /* keltainen */
+    color: black;              /* teksti mustaksi */
+    border: none;
+    border-radius: 6px;        /* vähän pyöristystä */
+    font-weight: 600;          /* hieman korostettu teksti */
+}
+
+/* Hover-efekti */
+vaadin-button:hover {
+    background-color: #FFC107; /* hieman tummempi keltainen hoverissa */
+}
+a {
+    color: #e6b800; /* tummempi keltainen */
+}
+a:hover {
+    color: #cc9900;
+}
+.add-person {
+    background-color: #4CAF50; /* vihreä */
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
