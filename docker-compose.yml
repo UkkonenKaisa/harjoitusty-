@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: harjoitustyo-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: harjoitustyo
+      MYSQL_USER: harjo
+      MYSQL_PASSWORD: harjo
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  harjoitustyo:
+    build: .
+    container_name: harjoitustyo-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/harjoitustyo
+      SPRING_DATASOURCE_USERNAME: harjo
+      SPRING_DATASOURCE_PASSWORD: harjo
+
+volumes:
+  db_data:
